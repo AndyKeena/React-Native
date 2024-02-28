@@ -68,7 +68,7 @@ const ViewEmployees = ({navigation}) => {
        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Employee Form')}>
         <Text style={styles.buttonText}>Add Employee</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Delete Employee Details')}>
         <Text style={styles.buttonText}>Delete Employee</Text>
       </TouchableOpacity>
     </View>
