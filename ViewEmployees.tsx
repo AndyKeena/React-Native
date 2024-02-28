@@ -54,8 +54,7 @@ const ViewEmployees: React.FC = () => {
         data={employees}
         renderItem={renderEmployee}
         keyExtractor={(item) => item.id.toString()}
-        ListHeaderComponent={renderHeading} 
-
+        ListHeaderComponent={renderHeading}
       />
     </View>
   );
