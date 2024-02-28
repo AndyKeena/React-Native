@@ -31,11 +31,17 @@ const EmployeeForm: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Id:</Text>
-      <TextInput
-        style={styles.input}
-        value={firstName}
-        onChangeText={setid}
-      />
+      <TextInput style={styles.input} value={id} onChangeText={setid} />
+      <Text style={styles.label}>First Name:</Text>
+      <TextInput style={styles.input} value={id} onChangeText={setFirstName} />
+      <Text style={styles.label}>Last Name:</Text>
+      <TextInput style={styles.input} value={id} onChangeText={setLastName} />
+      <Text style={styles.label}>NIC:</Text>
+      <TextInput style={styles.input} value={id} onChangeText={setNIC} />
+      <Text style={styles.label}>Year Joined:</Text>
+      <TextInput style={styles.input} value={id} onChangeText={setYearJoined} />
+      <Text style={styles.label}>Department Id:</Text>
+      <TextInput style={styles.input} value={id} onChangeText={setDepartmentId} />
 
       <Button title="Submit" onPress={handleSubmit} />
     </View>
