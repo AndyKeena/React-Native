@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 interface Employee {
   id: number;
@@ -10,8 +12,14 @@ interface Employee {
   departmentId: number;
 }
 
-const ViewEmployees: React.FC = () => {
+
+  
+
+const ViewEmployees = ({navigation}) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
+  // const navigation = useNavigation();
+
+  
 
   useEffect(() => {
     fetchEmployees();
@@ -50,14 +58,22 @@ const ViewEmployees: React.FC = () => {
 
   return (
     <View style={styles.container}>
+     
       <FlatList
         data={employees}
         renderItem={renderEmployee}
         keyExtractor={(item) => item.id.toString()}
         ListHeaderComponent={renderHeading}
       />
+       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Employee Form')}>
+        <Text style={styles.buttonText}>Add Employee</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Delete Employee</Text>
+      </TouchableOpacity>
     </View>
   );
+  
 };
 
 const styles = StyleSheet.create({
@@ -98,6 +114,18 @@ const styles = StyleSheet.create({
   cell: {
     flex: 1,
     textAlign: 'center',
+  },
+  button: {
+    backgroundColor: 'yellow',
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    marginVertical: 5,
+    marginHorizontal:5,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'black',
+    fontSize: 16,
   },
 });
 

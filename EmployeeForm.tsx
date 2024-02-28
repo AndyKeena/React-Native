@@ -20,12 +20,28 @@ const EmployeeForm: React.FC = () => {
       departmentId,
     });
 
-    setid('');
-    setFirstName('');
-    setLastName('');
-    setNIC('');
-    setYearJoined('');
-    setDepartmentId('');
+    fetch('http://10.0.2.2:8080/api/employees/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id, firstName, lastName, NIC, yearJoined, departmentId }),    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        setid('');
+        setFirstName('');
+        setLastName('');
+        setNIC('');
+        setYearJoined('');
+        setDepartmentId('');
+      } else {
+        console.error('Failed to submit form');
+      }
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+    });
   };
 
   return (
@@ -33,15 +49,15 @@ const EmployeeForm: React.FC = () => {
       <Text style={styles.label}>Id:</Text>
       <TextInput style={styles.input} value={id} onChangeText={setid} />
       <Text style={styles.label}>First Name:</Text>
-      <TextInput style={styles.input} value={id} onChangeText={setFirstName} />
+      <TextInput style={styles.input} value={firstName} onChangeText={setFirstName} />
       <Text style={styles.label}>Last Name:</Text>
-      <TextInput style={styles.input} value={id} onChangeText={setLastName} />
+      <TextInput style={styles.input} value={lastName} onChangeText={setLastName} />
       <Text style={styles.label}>NIC:</Text>
-      <TextInput style={styles.input} value={id} onChangeText={setNIC} />
+      <TextInput style={styles.input} value={NIC} onChangeText={setNIC} />
       <Text style={styles.label}>Year Joined:</Text>
-      <TextInput style={styles.input} value={id} onChangeText={setYearJoined} />
+      <TextInput style={styles.input} value={yearJoined} onChangeText={setYearJoined} />
       <Text style={styles.label}>Department Id:</Text>
-      <TextInput style={styles.input} value={id} onChangeText={setDepartmentId} />
+      <TextInput style={styles.input} value={departmentId} onChangeText={setDepartmentId} />
 
       <Button title="Submit" onPress={handleSubmit} />
     </View>
