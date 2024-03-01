@@ -4,9 +4,9 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 const DeleteEmployee: React.FC = () => {
     const [id, setIdToDelete] = useState('');
 
-    const handleDelete = async () => {
+    const handleDelete = async () => { //does not block the other part of the code 
         try {
-            if (!id.trim()) {
+            if (!id.trim()) { //remove whitesapce of a string in both sides 
                 console.error('Please enter an Employee ID to delete');
                 return;
             }
@@ -39,7 +39,7 @@ const DeleteEmployee: React.FC = () => {
                 style={styles.input}
                 value={id}
                 onChangeText={setIdToDelete}
-                keyboardType="numeric" 
+                // keyboardType="numeric" 
             />
             <Button title="Delete Employee" onPress={handleDelete} />
         </View>

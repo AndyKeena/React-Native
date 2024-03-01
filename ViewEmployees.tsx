@@ -15,9 +15,8 @@ interface Employee {
 
   
 
-const ViewEmployees = ({navigation}) => {
+const ViewEmployees = ({navigation}) => {  //use a prop - easyly navigate through screens 
   const [employees, setEmployees] = useState<Employee[]>([]);
-  // const navigation = useNavigation();
 
   
 
@@ -27,7 +26,7 @@ const ViewEmployees = ({navigation}) => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch('http://10.0.2.2:8080/api/employees');
+      const response = await fetch('http://10.0.2.2:8080/api/employees');  //prevent continuing until the process is done 
       const data = await response.json();
       setEmployees(data);
     } catch (error) {
@@ -45,7 +44,7 @@ const ViewEmployees = ({navigation}) => {
       <Text style={styles.headingCell}>Department ID</Text>
     </View>
   );
-  const renderEmployee = ({ item }: { item: Employee }) => (
+  const renderEmployee = ({ item }: { item: Employee }) => ( //item -  should be the type of employee(having the employee interface), how each employee object should displayed 
     <View style={styles.employeeRow}>
       <Text style={[styles.cell, { width: 50 }]}>{item.id}</Text>
       <Text style={[styles.cell, { width: 100 }]}>{item.firstName}</Text>
@@ -60,8 +59,8 @@ const ViewEmployees = ({navigation}) => {
     <View style={styles.container}>
      
       <FlatList
-        data={employees}
-        renderItem={renderEmployee}
+        data={employees} 
+        renderItem={renderEmployee}  //render each item in the data array  
         keyExtractor={(item) => item.id.toString()}
         ListHeaderComponent={renderHeading}
       />

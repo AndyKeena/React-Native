@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620661830710",
+    "project_id": "reactnative-firebase-709ae",
+    "storage_bucket": "reactnative-firebase-709ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620661830710:android:ba66b1cc7049d29e355497",
+        "android_client_info": {
+          "package_name": "com.employeemanagementreactnative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWYjMK-UJoYtP34-S5voAQiptGQuVfXjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

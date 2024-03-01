@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import ViewEmployees from './ViewEmployees';
 
 const EmployeeForm: React.FC = () => {
   const [id, setid] = React.useState('');
@@ -23,7 +22,7 @@ const EmployeeForm: React.FC = () => {
     fetch('http://10.0.2.2:8080/api/employees/add', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', // body of the request type
       },
       body: JSON.stringify({ id, firstName, lastName, NIC, yearJoined, departmentId }),    })
     .then(response => {
