@@ -19,7 +19,7 @@ const EmployeeForm: React.FC = () => {
       departmentId,
     });
 
-    fetch('http://10.0.2.2:8080/api/employees/add', {
+    fetch('http://192.168.128.91:8080/api/employees/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // body of the request type
