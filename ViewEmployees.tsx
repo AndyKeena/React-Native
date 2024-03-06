@@ -26,7 +26,7 @@ const ViewEmployees = ({navigation}) => {  //use a prop - easyly navigate throug
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch('http://10.0.2.2:8080/api/employees');  //prevent continuing until the process is done 
+      const response = await fetch('http://192.168.128.91:8080/api/employees');  //prevent continuing until the process is done 
       const data = await response.json();
       setEmployees(data);
     } catch (error) {
@@ -104,15 +104,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 4,
+    color:'black'
   },
   headingCell: {
     flex: 1,
     textAlign: 'center',
     fontWeight: 'bold',
+    color:'black'
+
   },
   cell: {
     flex: 1,
     textAlign: 'center',
+    color:'black'
   },
   button: {
     backgroundColor: 'yellow',

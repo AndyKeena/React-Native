@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 5,
+    color:'black'
+
   },
   input: {
     borderWidth: 1,
@@ -79,6 +81,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 10,
     marginBottom: 20,
+    color:'black'
+
   },
 });
 
